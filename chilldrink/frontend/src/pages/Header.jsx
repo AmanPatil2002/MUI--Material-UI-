@@ -85,6 +85,11 @@ export default function Navbar() {
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
+          <ListItemButton onClick={() => navigate("/product")}>
+            <ListItemText primary="Product" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
           <ListItemButton onClick={() => navigate("/about")}>
             <ListItemText primary="About Us" />
           </ListItemButton>

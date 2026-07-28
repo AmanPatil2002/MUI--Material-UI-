@@ -8,6 +8,7 @@ import ProtectedRoutes from "./utils/ProtectedRoutes";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import Profile from "./pages/Profile";
+import Product from "./pages/Product";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route element={<ProtectedRoutes />}>
         <Route element={<Layout />}>
           <Route path="/home" element={<Home />} />
+          <Route path="/product" element={<Product />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/profile" element={<Profile/>} />
           <Route path="/contact" element={<Contact />} />
