@@ -16,7 +16,8 @@ A collection of React projects built while learning **Material UI (MUI)**. This 
 MUI/
 ├── component/
 ├── first/
-├── JWT/
+├── chilldrink/
+├── coffee/
 ├── second/
 ├── third/
 ├── templete/
@@ -66,14 +67,17 @@ Responsive layouts with Grid, Stack, AppBar, and Cards.
 ### 3. second Project
 Responsive Website.
 
-### 4. JWT Project
-Responsive Website with backend and frontend.
-
-### 5. templete Project
+### 4. templete Project
 Using MUI templete.
 
-### 6. Third Project
+### 5. Third Project
 A social media UI inspired by Facebook using Material UI.
+
+### 6. chilldrink Project
+Responsive Website with backend and frontend.
+
+### 7. coffee Project
+Responsive Website with backend and frontend.
 
 Features:
 - Responsive Navbar
@@ -93,7 +97,7 @@ Features:
 Clone the repository:
 
 ```bash
-git clone https://github.com/AmanPatil2002/Material-UI.git
+git clone https://github.com/AmanPatil2002/MUI--Material-UI-.git
 ```
 
 Go to the project folder:
