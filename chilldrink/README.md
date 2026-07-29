@@ -1,4 +1,4 @@
-# JWT Authentication System
+# Chill Drinks
 
 A full-stack web application demonstrating JWT (JSON Web Token) authentication with a React frontend and Express.js backend. This project showcases secure authentication patterns, user session management, and protected routes.
 
@@ -7,8 +7,7 @@ A full-stack web application demonstrating JWT (JSON Web Token) authentication w
 - **JWT Authentication**: Secure token-based authentication system
 - **User Login & Registration**: Complete authentication flow
 - **Protected Routes**: Role-based access control
-- **Student Dashboard**: Display student information with mock data
-- **Responsive UI**: Built with Bootstrap and Tailwind CSS
+- **Admin Dashboard**: Display Admin information with mock data
 - **REST API**: Express.js backend with proper middleware
 - **Database Integration**: MySQL for data persistence
 - **Environment Configuration**: Secure environment variable management
@@ -19,9 +18,6 @@ A full-stack web application demonstrating JWT (JSON Web Token) authentication w
 - **React 19** - UI library
 - **Vite** - Build tool and dev server
 - **React Router DOM** - Client-side routing
-- **Bootstrap 5** - UI components
-- **Tailwind CSS** - Utility-first CSS framework
-- **Faker.js** - Generate mock data
 
 ### Backend
 - **Node.js** - Runtime environment
@@ -38,15 +34,49 @@ A full-stack web application demonstrating JWT (JSON Web Token) authentication w
 JWT/
 ├── frontend/                 # React application
 │   ├── src/
-│   │   ├── components/      # React components
+│   │   ├── assets/           # Contains the images
+|   |   ├── components/       # React components
+|   |   |   ├── Bookmark.jsx
+|   |   |   ├── Cards.jsx
+|   |   |   ├── Followers.jsx
+|   |   |   ├── ForgetPassword.jsx
+|   |   |   ├── Hero.jsx
+|   |   |   ├── Masonry.jsx
+|   |   |   ├── Post.jsx
+|   |   |   └── ProfileCard.jsx
+│   │   ├── pages/            # React pages
+|   |   |   ├── AboutUs.jsx
+|   |   |   ├── Contact.jsx
+|   |   |   ├── Dashboard.jsx
+|   |   |   ├── Footer.jsx
+|   |   |   ├── Header.jsx
+|   |   |   ├── Home.jsx
+|   |   |   ├── Home.css
+|   |   |   ├── Login.jsx
+|   |   |   ├── ManageProduct.jsx
+|   |   |   ├── ManageUsers.jsx
+|   |   |   ├── Product.jsx
+|   |   |   ├── Profile.jsx
+|   |   |   ├── Register.jsx
+|   |   |   ├── Review.jsx
+|   |   |   ├── Settings.jsx
+|   |   |   └── ThemeSwitch.jsx
 │   │   ├── utils/           # Utility functions
-│   │   └── App.jsx          # Main component
+|   |   |   └── ProtectedRoutes.jsx
+│   │   ├── App.jsx          # Main component
+|   |   └── Layout.jsx
 │   └── package.json
 ├── backend/                  # Express server
 │   ├── config/              # Configuration files
+|   |   └── db.js
 │   ├── controller/          # Route controllers
+|   |   ├── authController.js
+|   |   └── productController.js
 │   ├── middleware/          # Custom middleware (JWT)
+|   |   └── authenticate.js
 │   ├── routes/              # API routes
+|   |   ├── authRoutes.js
+|   |   └── productRoutes.js
 │   ├── server.js            # Entry point
 │   ├── .env                 # Environment variables
 │   └── package.json
