@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import "./Home.css";
 import Hero from "../components/Hero";
-import Card from "../components/Cards"
+import Card from "../components/Cards";
 import ImageMasonry from "../components/Masonry";
 
 function Home() {
- 
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -44,16 +43,30 @@ function Home() {
 
   return (
     <>
-        <Hero/>
-        <h2 style={{textAlign:'center',paddingTop:15}}>Drinks</h2>
-        <div style={{display:'flex', gap:30, justifyContent:'center', marginTop:5, marginBottom:10}}>
-            <Card/>
-        </div>
-       
-        <div style={{display:'flex', justifyContent:'center', marginTop:5, marginBottom:10}}>
-  
-             <ImageMasonry/>
-        </div>
+      <Hero />
+      <h2 style={{ textAlign: "center", paddingTop: 15 }}>Drinks</h2>
+      <div
+        style={{
+          display: "flex",
+          gap: 30,
+          justifyContent: "center",
+          marginTop: 5,
+          marginBottom: 10,
+        }}
+      >
+        <Card />
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: 5,
+          marginBottom: 10,
+        }}
+      >
+        <ImageMasonry />
+      </div>
     </>
   );
 }

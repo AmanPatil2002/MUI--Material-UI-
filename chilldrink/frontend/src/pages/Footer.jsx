@@ -72,7 +72,7 @@ export default function Footer() {
 
             <div className="d-flex align-items-center mb-3">
               <LocationOn className="me-2" />
-              <Typography variant="body2">Pune, Maharashtra, India</Typography>
+              <Typography variant="body2">Lorem ipsum dolor sit amet.</Typography>
             </div>
 
             <div className="d-flex align-items-center mb-3">
@@ -82,7 +82,7 @@ export default function Footer() {
 
             <div className="d-flex align-items-center">
               <Email className="me-2" />
-              <Typography variant="body2">info@chilldrinks.com</Typography>
+              <Typography variant="body2">lorem@chilldrinks.com</Typography>
             </div>
           </div>
 

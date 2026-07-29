@@ -10,7 +10,6 @@ import { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
 
 export default function Products() {
-  
   const [show, setShow] = useState([]);
   const showProduct = async () => {
     try {
@@ -27,21 +26,21 @@ export default function Products() {
   }, []);
 
   return (
-    <Box sx={{ width: "100%", typography: "body1" ,paddingTop:2}}>
-        <Typography variant="h2" gutterBottom sx={{textAlign:'center'}}>
-            Products
-        </Typography>
+    <Box sx={{ width: "100%", typography: "body1", paddingTop: 2 }}>
+      <Typography variant="h2" gutterBottom sx={{ textAlign: "center" }}>
+        Products
+      </Typography>
       <Grid
-  container
-  spacing={5}
-  sx={{
-    ml: "90px",
-    height: "150vh",
-    overflowY: "scroll",
-    overflowX: "hidden",
-    p: 10,
-  }}
->
+        container
+        spacing={5}
+        sx={{
+          ml: "90px",
+          height: "150vh",
+          overflowY: "scroll",
+          overflowX: "hidden",
+          p: 10,
+        }}
+      >
         {show.map((items) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={items.id}>
             <Card sx={{ maxWidth: 345, height: "100%" }} className="my-button">
