@@ -65,7 +65,7 @@ function Contact() {
           <div className="col-md-4">
             <Card elevation={4}>
               <CardContent className="text-center">
-                <LocationOn sx={{ fontSize: 45, color: "#b40f4d" }} />
+                <LocationOn sx={{ fontSize: 45, color: "#08B2E3" }} />
                 <Typography variant="h6" mt={2}>
                   Address
                 </Typography>
@@ -80,7 +80,7 @@ function Contact() {
           <div className="col-md-4">
             <Card elevation={4}>
               <CardContent className="text-center">
-                <Phone sx={{ fontSize: 45, color: "#b40f4d" }} />
+                <Phone sx={{ fontSize: 45, color: "#08B2E3" }} />
 
                 <Typography variant="h6" mt={2}>
                   Phone
@@ -94,7 +94,7 @@ function Contact() {
           <div className="col-md-4">
             <Card elevation={4}>
               <CardContent className="text-center">
-                <Email sx={{ fontSize: 45, color: "#b40f4d" }} />
+                <Email sx={{ fontSize: 45, color: "#08B2E3" }} />
 
                 <Typography variant="h6" mt={2}>
                   Email
@@ -118,7 +118,6 @@ function Contact() {
               <Typography variant="h5" mb={3} fontWeight="bold">
                 Send Us a Message
               </Typography>
-
               <form onSubmit={handleSubmit}>
                 <TextField
                   label="Full Name"
@@ -129,7 +128,6 @@ function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                 />
-
                 <TextField
                   label="Email"
                   name="email"
@@ -140,7 +138,6 @@ function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                 />
-
                 <TextField
                   label="Subject"
                   name="subject"
@@ -150,7 +147,6 @@ function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                 />
-
                 <TextField
                   label="Message"
                   name="message"
@@ -162,16 +158,15 @@ function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                 />
-
                 <Button
                   type="submit"
                   variant="contained"
                   size="large"
                   sx={{
                     mt: 3,
-                    backgroundColor: "#b40f4d",
+                    backgroundColor: "#08B2E3",
                     "&:hover": {
-                      backgroundColor: "#8f0d3d",
+                      backgroundColor: "#08B1E3",
                     },
                   }}
                 >
@@ -180,7 +175,6 @@ function Contact() {
               </form>
             </Paper>
           </div>
-
           {/* Map */}
 
           <div className="col-lg-5">

@@ -68,7 +68,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Navbar() {
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
-  
+
   // Check if user is admin
   const isAdmin = localStorage.getItem("role") === "admin";
 
@@ -115,16 +115,19 @@ export default function Navbar() {
           </ListItemButton>
         </ListItem>
       </List>
-      
+
       {/* Admin Section in Drawer */}
       {isAdmin && (
         <>
           <Divider />
           <List>
-            <ListItem disablePadding sx={{backgroundColor:'#50514F',textAlign:'center'}}>
-              <ListItemText 
-                primary="Admin Panel" 
-                sx={{ px: 2, py: 1, color: 'White', fontWeight: 'bold'}} 
+            <ListItem
+              disablePadding
+              sx={{ backgroundColor: "#50514F", textAlign: "center" }}
+            >
+              <ListItemText
+                primary="Admin Panel"
+                sx={{ px: 2, py: 1, color: "White", fontWeight: "bold" }}
               />
             </ListItem>
             <ListItem disablePadding>
@@ -142,15 +145,10 @@ export default function Navbar() {
                 <ListItemText primary="Manage Products" />
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton onClick={() => navigate("/admin/settings")}>
-                <ListItemText primary="Settings" />
-              </ListItemButton>
-            </ListItem>
           </List>
         </>
       )}
-      
+
       <Divider />
       <List>
         <ListItem disablePadding>
@@ -158,10 +156,16 @@ export default function Navbar() {
             <ListItemText primary="Profile" />
           </ListItemButton>
         </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton onClick={() => navigate("/settings")}>
+            <ListItemText primary="Settings" />
+          </ListItemButton>
+        </ListItem>
       </List>
+      
     </Box>
   );
-  
+
   const [lightMode, setlightMode] = useState(true);
 
   const theme = createTheme({
@@ -238,14 +242,9 @@ export default function Navbar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      
       {isAdmin && (
         <MenuItem onClick={() => navigate("/admin/dashboard")}>
-          <IconButton
-            size="large"
-            aria-label="admin panel"
-            color="inherit"
-          >
+          <IconButton size="large" aria-label="admin panel" color="inherit">
             <AdminPanelSettingsIcon />
           </IconButton>
           <p>Admin Panel</p>

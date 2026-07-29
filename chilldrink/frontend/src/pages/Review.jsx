@@ -23,9 +23,10 @@ const review = [
 { message: "They have a variety of drinks and tropical fruit juices." },
 { message: "Fast Service with Good management team."},
 { message: "Cozy Environment + Professional Staff Member's."},
-{ message: "."},
-{ message: "."},
-{ message: "."},
+{ message: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, animi optio."},
+{ message: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, animi optio."},
+{ message: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, animi optio."},
+
 ];
 
 export default function Review() {
