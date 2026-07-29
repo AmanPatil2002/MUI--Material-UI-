@@ -9,6 +9,10 @@ import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import Profile from "./pages/Profile";
 import Product from "./pages/Product";
+import Dashboard from "./pages/Dashboard";
+import ManageUsers from "./pages/ManageUsers";
+import ManageProduct from "./pages/ManageProduct"
+import Settings from "./pages/Settings"
 
 function App() {
   return (
@@ -23,6 +27,11 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/profile" element={<Profile/>} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/admin/users" element={<ManageUsers />} />
+          <Route path="/admin/products" element={<ManageProduct />} />
+          <Route path="/admin/settings" element={<Settings />} />
+          
         </Route>
       </Route>
     </Routes>

@@ -17,6 +17,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
@@ -58,7 +59,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -71,13 +71,26 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Navbar() {
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
+  
+  // Check if user is admin
+  const isAdmin = localStorage.getItem("role") === "admin";
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    localStorage.removeItem("role");
+
+    handleMenuClose();
+
+    navigate("/", { replace: true });
+  };
+
   const DrawerList = (
-    <Box sx={{ width: 250}} role="presentation" onClick={toggleDrawer(false)}>
+    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
       <List>
         <ListItem disablePadding>
           <ListItemButton onClick={() => navigate("/home")}>
@@ -100,6 +113,42 @@ export default function Navbar() {
           </ListItemButton>
         </ListItem>
       </List>
+      
+      {/* Admin Section in Drawer */}
+      {isAdmin && (
+        <>
+          <Divider />
+          <List>
+            <ListItem disablePadding sx={{backgroundColor:'#50514F',textAlign:'center'}}>
+              <ListItemText 
+                primary="Admin Panel" 
+                sx={{ px: 2, py: 1, color: 'White', fontWeight: 'bold'}} 
+              />
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton onClick={() => navigate("/admin/dashboard")}>
+                <ListItemText primary="Dashboard" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton onClick={() => navigate("/admin/users")}>
+                <ListItemText primary="Manage Users" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton onClick={() => navigate("/admin/products")}>
+                <ListItemText primary="Manage Products" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton onClick={() => navigate("/admin/settings")}>
+                <ListItemText primary="Settings" />
+              </ListItemButton>
+            </ListItem>
+          </List>
+        </>
+      )}
+      
       <Divider />
       <List>
         <ListItem disablePadding>
@@ -110,6 +159,7 @@ export default function Navbar() {
       </List>
     </Box>
   );
+  
   const [lightMode, setlightMode] = useState(true);
 
   const theme = createTheme({
@@ -161,8 +211,11 @@ export default function Navbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose} onClick={() => navigate("/profile")}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={() => navigate("/profile")}>Profile</MenuItem>
+      {isAdmin && <MenuItem onClick={() => navigate("/admin/dashboard")}>Admin Panel</MenuItem>}
+      <MenuItem sx={{ color: "red" }} onClick={handleLogout}>
+        Log out
+      </MenuItem>
     </Menu>
   );
 
@@ -203,6 +256,18 @@ export default function Navbar() {
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
+      {isAdmin && (
+        <MenuItem onClick={() => navigate("/admin/dashboard")}>
+          <IconButton
+            size="large"
+            aria-label="admin panel"
+            color="inherit"
+          >
+            <AdminPanelSettingsIcon />
+          </IconButton>
+          <p>Admin Panel</p>
+        </MenuItem>
+      )}
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -216,7 +281,7 @@ export default function Navbar() {
         <p>Profile</p>
       </MenuItem>
       <MenuItem>
-          <ThemeSwitch lightMode={lightMode} setlightMode={setlightMode} />
+        <ThemeSwitch lightMode={lightMode} setlightMode={setlightMode} />
       </MenuItem>
     </Menu>
   );
@@ -256,6 +321,18 @@ export default function Navbar() {
             </Search>
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              {/* Admin Icon in Desktop View */}
+              {isAdmin && (
+                <IconButton
+                  size="large"
+                  aria-label="admin panel"
+                  color="inherit"
+                  onClick={() => navigate("/admin/dashboard")}
+                  title="Admin Panel"
+                >
+                  <AdminPanelSettingsIcon />
+                </IconButton>
+              )}
               <IconButton
                 size="large"
                 aria-label="show 4 new mails"
