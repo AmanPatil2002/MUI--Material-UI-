@@ -23,10 +23,10 @@ import {
 export default function Dashboard() {
 
   const recentOrders = [
-    { id: 1, customer: 'Aman Patil', drink: 'Mango Smoothie', amount: '80', status: 'Completed' },
+    { id: 1, customer: 'Pravin Patil', drink: 'Mango Smoothie', amount: '80', status: 'Completed' },
     { id: 2, customer: 'Rahul Verma', drink: 'Watermelon Juice', amount: '75', status: 'Processing' },
     { id: 3, customer: 'Neha Patel', drink: 'Coca Cola Drink', amount: '60', status: 'Pending' },
-    { id: 4, customer: 'Vikram Shah', drink: 'Cold Coffee', amount: '40', status: 'Completed' }
+    { id: 4, customer: 'Vikram Shah', drink: 'Lime Juice', amount: '40', status: 'Completed' }
   ];
 
   const popularDrinks = [
